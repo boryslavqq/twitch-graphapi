@@ -14,8 +14,9 @@ func New() *Scrapper {
 	}
 }
 
-func (s *Scrapper) SetClientId(clientId string) {
+func (s *Scrapper) SetClientId(clientId string) *Scrapper {
 	s.headers.Header.Set("Client-Id", clientId)
+	return s
 }
 
 func initHeaders() *fasthttp.Request {
