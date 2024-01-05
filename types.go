@@ -1,5 +1,7 @@
 package twitchgraphapi
 
+const twitchApiUrl = "https://gql.twitch.tv/gql"
+
 type UsersInfo struct {
 	Data struct {
 		CurrentUser interface{} `json:"currentUser"`
