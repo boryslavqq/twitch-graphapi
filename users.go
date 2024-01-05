@@ -19,6 +19,8 @@ func (s *Scrapper) GetUserData(username string) (UsersInfo, error) {
 	s.headers.CopyTo(req)
 
 	req.SetBody([]byte(data))
+	req.SetRequestURI(twitchApiUrl)
+	req.Header.SetMethod(fasthttp.MethodPost)
 
 	err := s.httpClient.Do(req, res)
 	if err != nil {
