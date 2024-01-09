@@ -10,7 +10,7 @@ func (s *Scrapper) GetUserData(username string) ([]UsersInfo, error) {
 	var users []UsersInfo
 
 	data := fmt.Sprintf(
-		`[{"operationName":"ChannelRoot_AboutPanel","variables":{"channelLogin":"%s","skipSchedule":true},"extensions":{"persistedQuery":{"version":1,"sha256Hash":"6089531acef6c09ece01b440c41978f4c8dc60cb4fa0124c9a9d3f896709b6c6"}}}]`,
+		`[{"operationName":"ChannelRoot_AboutPanel","variables":{"channelLogin":"%s","skipSchedule":true},"extensions":{"persistedQuery":{"version":1,"sha256Hash":"6089531acef6c09ece01b440c41978f4c8dc60cb4fa0124c9a9d3f896709b6c6"}}},{"operationName":"HomeTrackQuery","variables":{"channelLogin":"stray228"},"extensions":{"persistedQuery":{"version":1,"sha256Hash":"129cbf14117ce8e95f01bd2043154089058146664df866d0314e84355ffb4e05"}}}]`,
 		username)
 
 	req := fasthttp.AcquireRequest()
