@@ -65,6 +65,45 @@ type (
 			RequestID            string `json:"requestID"`
 		} `json:"extensions"`
 	}
+
+	UsersCategories struct {
+		Data struct {
+			User struct {
+				Id              string `json:"id"`
+				PrimaryColorHex string `json:"primaryColorHex"`
+				Channel         struct {
+					Id   string `json:"id"`
+					Home struct {
+						Shelves struct {
+							CategoryShelf struct {
+								Edges []struct {
+									Node struct {
+										Id           string `json:"id"`
+										BoxArtURL    string `json:"boxArtURL"`
+										DisplayName  string `json:"displayName"`
+										Name         string `json:"name"`
+										ViewersCount int    `json:"viewersCount"`
+										Typename     string `json:"__typename"`
+									} `json:"node"`
+									Typename string `json:"__typename"`
+								} `json:"edges"`
+								Typename string `json:"__typename"`
+							} `json:"categoryShelf"`
+							Typename string `json:"__typename"`
+						} `json:"shelves"`
+						Typename string `json:"__typename"`
+					} `json:"home"`
+					Typename string `json:"__typename"`
+				} `json:"channel"`
+				Typename string `json:"__typename"`
+			} `json:"user"`
+		} `json:"data"`
+		Extensions struct {
+			DurationMilliseconds int    `json:"durationMilliseconds"`
+			OperationName        string `json:"operationName"`
+			RequestID            string `json:"requestID"`
+		} `json:"extensions"`
+	}
 )
 
 type VideoMetadata struct {
